@@ -11,8 +11,6 @@ import { RouterModule } from '@angular/router';
 import { CreateComponent } from './create/create.component';
 import { UpdateComponent } from './update/update.component';
 import { DeleteComponent } from './delete/delete.component';
-import { LoginComponent } from './login/login.component';
-import { CartComponent } from './cart/cart.component';
 import { GcategoryComponent } from './gcategory/gcategory.component';
 import { EcategoryComponent } from './ecategory/ecategory.component';
 import {ReactiveFormsModule,FormsModule} from '@angular/forms';
@@ -27,8 +25,6 @@ import { HomeComponent } from './home/home.component';
     CreateComponent,
     UpdateComponent,
     DeleteComponent,
-    LoginComponent,
-    CartComponent,
     GcategoryComponent,
     EcategoryComponent,
     HomeComponent
