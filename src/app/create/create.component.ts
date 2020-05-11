@@ -34,7 +34,7 @@ export class CreateComponent implements OnInit {
     })
   }
   sendData() {
-    console.log(this.userForm.value);
+    
     this.productService.postProduct(this.userForm.value).subscribe((productdata)=>{
       alert('New item'+this.userForm.value.name +' has been created!');
       this.router.navigate(['/']); //redirecting to home page after action is completed
