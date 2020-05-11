@@ -26,7 +26,7 @@ export class UpdateComponent implements OnInit {
       'id':new FormControl('give a unique id'),
       '_id':new FormControl('Object ID-do not modify'),
       'category':new FormControl(),
-      'price':new FormControl('899'),
+      'price':new FormControl(),
       'image':new FormControl('copy image address'),
       'description':new FormControl('')         
     })

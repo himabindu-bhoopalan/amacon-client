@@ -16,7 +16,6 @@ export class GcategoryComponent implements OnInit {
   ngOnInit(): void {
     this.sub = this.route.params.subscribe(params => {
       this.name = params['name']});
-      console.log('inside gcategory.ts'+this.name)
       this.product.listcategory('Groceries').subscribe((data)=>{
         
         this.listData=data;
