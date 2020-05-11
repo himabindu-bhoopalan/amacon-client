@@ -15,11 +15,11 @@ export class CreateComponent implements OnInit {
   constructor(private productService:ProductService,private router:Router ) {
     
     this.userForm = new FormGroup({
-      'name':new FormControl('Enter productname'),
-      'id':new FormControl('give a unique id'),
-      'category':new FormControl(),
-      'price':new FormControl('899'),
-      'image':new FormControl('copy image address'),
+      'name':new FormControl('',Validators.required),
+      'id':new FormControl('give a unique id',Validators.required),
+      'category':new FormControl('',Validators.required),
+      'price':new FormControl('',Validators.required),
+      'image':new FormControl('copy image address',Validators.required),
       'description':new FormControl('')         
     })
    }
