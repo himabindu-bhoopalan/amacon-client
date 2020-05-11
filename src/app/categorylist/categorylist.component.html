@@ -1,0 +1,12 @@
+<div class="row m-5 ">
+    <div class="col-lg-3" *ngFor="let clo of listData">
+        <div class="card" style="width: 20 rem;">
+            <img [src]="clo.image" class="card-img-top" alt="clo.alt">
+            <div class="card-body">
+                <h5 class="card-title">{{clo.price|currency:'INR'}}</h5>
+                <p class="card-text">{{clo.name}}</p>
+                <a routerLink="product"  class="btn btn-primary">View Item</a>
+            </div>
+        </div>
+    </div>
+</div>

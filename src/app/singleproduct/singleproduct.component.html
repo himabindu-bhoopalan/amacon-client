@@ -1,0 +1,15 @@
+<!-- <div class="row m-5 "> -->
+    <div class="col-lg-6 m-5" *ngFor="let clo of listData">
+        <div *ngIf="clo._id == id">
+        <div class="card" style="width: 40 rem;">
+            <img [src]="clo.image" class="card-img-top" alt="clo.alt">
+            <div class="card-body">
+                <h5 class="card-title">{{clo.price|currency:'INR'}}</h5>
+                <p class="card-text">{{clo.name}}</p>
+                <p class="card-text">{{clo.desc}}</p>
+                <a routerLink="cart"  class="btn btn-primary">Add to cart</a>
+                
+            </div>
+        </div>
+    </div>
+<!-- </div> -->

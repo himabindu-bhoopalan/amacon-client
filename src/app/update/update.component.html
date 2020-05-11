@@ -1,0 +1,64 @@
+<!-- <p>create works!</p> -->
+<div class="container">
+    <form [formGroup]="ProdForm" >
+        <div class="col-lg-3">
+            <label for="">Choose a product to modify</label>
+            <select formControlName="select" class="form-control" [(ngModel)]="selectedproduct" (change)="fill()">
+                <option value="" disabled selected></option>
+                <option *ngFor="let item of listData" [ngValue]="item">{{item.name}}</option>
+            </select>
+        </div>
+    </form>
+
+    
+    <form [formGroup]="userForm" (submit)="update()">
+        
+        <div class="col-lg-3">
+            <label for="">Product Name</label>
+            <input type="text" formControlName="name" class="form-control">
+        </div>
+
+        <!-- <div class="col-lg-3">
+            <label for="">Object ID</label>
+            <input type="number" formControlName="_id" class="form-control">
+        </div> -->
+        <div class="col-lg-3">
+            <label for="">ID</label>
+            <input type="number" formControlName="id" class="form-control">
+        </div>
+
+        <div class="col-lg-3">
+            <label for="">Category</label>
+            <!-- <input type="text" formControlName="category" class="form-control"> -->
+            <select class="custom-select"  formControlName="category">
+                <option value="" disabled>Choose the Category</option>
+                <option *ngFor="let cat of category" [ngValue]="cat">{{cat}}</option>
+             </select>
+        </div>
+        
+
+        <div class="col-lg-3">
+            <label for="">Price</label>
+            <input type="text" formControlName="price" class="form-control">
+        </div>
+
+        <div class="col-lg-3">
+            <label for="">Image</label>
+            <input type="text" formControlName="image" class="form-control">
+        </div>
+
+        <div class="col-lg-3">
+            <label for="">Description</label>
+            <input type="text" formControlName="description" class="form-control">
+        </div>
+       
+        <div class="col-lg-3 p-4">
+            <input type="submit" value='UPDATE' class="btn-btn-primary">
+        </div>
+
+
+    </form>
+</div>
+
+
+
