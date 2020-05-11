@@ -37,7 +37,7 @@ export class UpdateComponent implements OnInit {
   selectedproduct:any;
   fill()
   {
-    console.log(this.selectedproduct._id);
+    
     this.userForm.get('name').setValue(this.selectedproduct.name);
     this.userForm.get('_id').setValue(this.selectedproduct._id);
     this.userForm.get('id').setValue(this.selectedproduct.id);
@@ -49,7 +49,7 @@ export class UpdateComponent implements OnInit {
 
   update()
   {
-    console.log(this.userForm.value);
+    
     this.productService.updateProduct(this.userForm.value).subscribe((data) => {
       this.router.navigate(['/']);
       console.log(data);
