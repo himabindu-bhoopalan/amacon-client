@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ProductService } from '../product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-delete',
@@ -12,7 +13,7 @@ export class DeleteComponent implements OnInit {
   listData
   newid
   
-  constructor(private productservice:ProductService) { 
+  constructor(private productservice:ProductService,private router:Router) { 
     this.productservice.listProduct().subscribe((data) => {
       this.listData=data;
     })
@@ -26,23 +27,23 @@ export class DeleteComponent implements OnInit {
   delData(){
     let count=0;
     for(let i=0;i<this.listData.length;i++){
-        // console.log(this.userForm.value.id);
+        
         if(this.userForm.value.name==this.listData[i].name){
           count++;
+          //assigning the list item object id to id variable
           this.userForm.value.id=this.listData[i]._id;
-          // console.log(this.userForm.value.id);
           
+         
         }
        
     }
     if(count==0){
       alert('Product not found');
     }
-    //doubt why am i not able to pass a new variable into delProduct ..only userForm is being allowed???
     console.log('inside delData method'+this.userForm.value.name+this.userForm.value.id);
         this.productservice.delProduct(this.userForm.value.id).subscribe((data)=>{
           alert(this.userForm.value.name+' has been deleted');
-          console.log('status:'+data.status+' '+'message:'+data.message);
+          this.router.navigate(['/']); //redirect to home page
         })
   }
 }

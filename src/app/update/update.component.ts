@@ -51,8 +51,9 @@ export class UpdateComponent implements OnInit {
   {
     console.log(this.userForm.value);
     this.productService.updateProduct(this.userForm.value).subscribe((data) => {
-      console.log(data);
       this.router.navigate(['/']);
+      console.log(data);
+      
       console.log(data);
     })
   }

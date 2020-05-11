@@ -16,10 +16,10 @@ export class EcategoryComponent implements OnInit {
   ngOnInit(): void {
     this.sub = this.route.params.subscribe(params => {
       this.name = params['name']});
-      console.log('inside ecategory.ts'+this.name);
+      
       this.product.listcategory('Electronics').subscribe((data)=>{
         this.listData=data;
-         console.log(this.listData);
+         
         })
          
      

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -11,7 +12,7 @@ export class CreateComponent implements OnInit {
   userForm
   
   category:any=['Women','Groceries','Electronics']
-  constructor(private productService:ProductService) {
+  constructor(private productService:ProductService,private router:Router ) {
     
     this.userForm = new FormGroup({
       'name':new FormControl('Enter productname'),
@@ -35,7 +36,8 @@ export class CreateComponent implements OnInit {
   sendData() {
     console.log(this.userForm.value);
     this.productService.postProduct(this.userForm.value).subscribe((productdata)=>{
-      console.log("data added id is"+productdata);
+      alert('New item'+this.userForm.value.name +' has been created!');
+      this.router.navigate(['/']); //redirecting to home page after action is completed
     })
   }
 

@@ -20,8 +20,7 @@ export class GcategoryComponent implements OnInit {
       this.product.listcategory('Groceries').subscribe((data)=>{
         
         this.listData=data;
-        // this.router.navigate(['category',this.name])
-         console.log(this.listData);
+        
         })
   }
 

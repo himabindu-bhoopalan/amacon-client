@@ -17,18 +17,10 @@ export class CategorylistComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.sub = this.route.params.subscribe(params => {
+    this.sub = this.route.params.subscribe(params => { //getting the paramter passed in the url
       this.name = params['name']});
-      console.log("inside categorylist.ts"+this.name);
       this.product.listcategory('Women').subscribe((data)=>{
-        
-        this.listData=data;
-        
-        console.log(this.listData);
-        
-        // this.router.navigate(['/category', { id: this.name }]);
-        // this.ngOnInit();
-        //  this.router.navigate(['category/',this.name]);
+        this.listData=data;//fetching the data 
         })
         
   }
