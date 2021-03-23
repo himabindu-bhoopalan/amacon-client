@@ -1,4 +1,4 @@
-# Amacon
+# Amacon->front end for MEAN STACK ecommerce site 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
